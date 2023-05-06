@@ -31,7 +31,7 @@ describe('Interact with the elements', () => {
 		await page.type('#comments', 'Such a nice place to drink a coffee', { delay: 100 });
 		await page.click('#submit-button', { button: 'left', delay: 500 });
 
-		timeout(3000);
+		// timeout(3000);
 
 		await browser.close();
 	}, 30000);
