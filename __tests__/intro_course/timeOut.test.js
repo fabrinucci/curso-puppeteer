@@ -11,8 +11,8 @@ describe('waitTypes', () => {
 		const page = await browser.newPage();
 		await page.goto('https://platzi.com', { waitUntil: 'networkidle2' });
 
-		await page.setDefaultTimeout(5000);
-		await page.setDefaultNavigationTimeout(5000);
+		page.setDefaultTimeout(5000);
+		page.setDefaultNavigationTimeout(5000);
 
 		await page.waitForFunction(() => !document.querySelector('#example-modal-sizes-title-sm'));
 
@@ -26,7 +26,7 @@ describe('waitTypes', () => {
 });
 
 //@ Los timeouts se pueden configurar de las siguientes maneras:
-//$ Con jest.setTimeout(ms), importante colocarlo fuera del it.
+//$ Con jest.setTimeout(ms), importante colocarlo fuera del it o test.
 //$ Con los setDefaultTimeout y setDefaultNavigationTimeout propios de puppeteer dentro del it
 //$ Añadiendo un timeout a una función específica, pasando un objeto que incluye timeout: milisegundos
 //$ Añadiendo los milisegundos directamente como parámetro en el it
