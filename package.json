@@ -4,13 +4,15 @@
 	"description": "",
 	"main": "index.js",
 	"scripts": {
-		"test": "jest --forceExit"
+		"test": "jest --forceExit --detectOpenHandles",
+		"visual-test": "jest --updateSnapshot --forceExit --detectOpenHandles __tests__/advanced_course/visual"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
 		"jest": "^29.5.0",
+		"jest-image-snapshot": "^6.1.0",
 		"puppeteer": "^20.1.0"
 	},
 	"devDependencies": {
